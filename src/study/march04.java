@@ -1,6 +1,7 @@
 package study;
 
 import java.io.*;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class march04 {

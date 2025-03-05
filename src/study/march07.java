@@ -1,19 +1,21 @@
 package study;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class march06 {
+public class march07 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int x = sc.nextInt();
-
-        int sum = 0;
+        int[] arr = new int[x];
 
         for (int i = 0; i < x; i++) {
-            int b = x-i;
-            sum += b;
+            arr[i] = sc.nextInt();
         }
-        System.out.println(sum);
+
+        sc.close();
+        Arrays.sort(arr);
+        System.out.println(arr[0] + " " + arr[x -1]);
     }
 }
