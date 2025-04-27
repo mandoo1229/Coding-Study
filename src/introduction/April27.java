@@ -1,5 +1,7 @@
 package introduction;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class April27 {
@@ -7,18 +9,25 @@ public class April27 {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
+        int K = sc.nextInt();
+        sc.close();
 
-        long[] dp = new long[N + 1];
-
-        dp[1] = 1;
-        if (N >= 2) {
-            dp[2] = 1;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= N; i++) {
+            list.add(i);
         }
+        StringBuilder sb = new StringBuilder();
+        sb.append("<");
 
-        for (int i = 3; i <= N; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2];
+        int index = 0;
+        while (!list.isEmpty()) {
+            index = (index + K - 1) % list.size();
+            sb.append(list.remove(index));
+            if (!list.isEmpty()) {
+                sb.append(", ");
+            }
         }
-        System.out.println(dp[N]);
-
+        sb.append(">");
+        System.out.println(sb.toString());
     }
 }
